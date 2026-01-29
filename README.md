@@ -47,7 +47,7 @@ Users can add food items to the cart and proceed to checkout, where the order de
 
 ## 🌐 Live Demo
 
-👉 https://hafizullah-portfolio.edgeone.app/delicia-restaurant
+👉 https://hafizullah-portfolio.edgeone.app/delicia-restaurant/index.html
 
 ---
 
