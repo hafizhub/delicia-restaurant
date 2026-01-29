@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Delícia Restaurant - Authentic Pakistani Flavors</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">DELÍCIA</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Authentic Pakistani Cuisine</p>
+            <h1>Flavors of Pakistan</h1>
+            <p class="hero-description">Experience the rich taste of traditional Pakistani dishes, prepared with authentic spices and served with love.</p>
+            <a href="#menu" class="btn">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="section-header fade-in">
+            <p class="section-subtitle">Our Specialties</p>
+            <h2 class="section-title">Delicious Menu</h2>
+        </div>
+
+        <div class="menu-filter">
+            <button class="filter-btn active" onclick="filterMenu('all')">All Dishes</button>
+            <button class="filter-btn" onclick="filterMenu('starter')">Starters</button>
+            <button class="filter-btn" onclick="filterMenu('main')">Main Course</button>
+            <button class="filter-btn" onclick="filterMenu('bbq')">BBQ & Karahi</button>
+            <button class="filter-btn" onclick="filterMenu('dessert')">Desserts</button>
+            <button class="filter-btn" onclick="filterMenu('drinks')">Drinks</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-header fade-in">
+            <p class="section-subtitle">Customer Reviews</p>
+            <h2 class="section-title">What Our Guests Say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Best biryani in town! The flavors are absolutely authentic and remind me of home-cooked meals. The chicken karahi is also outstanding!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div class="testimonial-info">
+                        <h4>Ahmed Khan</h4>
+                        <p>Karachi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"The nihari is exceptional! Perfect spices and the naan is freshly baked. This is the real taste of Pakistan. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">F</div>
+                    <div class="testimonial-info">
+                        <h4>Fatima Ali</h4>
+                        <p>Lahore</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Incredible food and great service! The seekh kababs melted in my mouth. The ambiance is perfect for family dinners."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">M</div>
+                    <div class="testimonial-info">
+                        <h4>Muhammad Hassan</h4>
+                        <p>Islamabad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"The haleem is to die for! Perfect consistency and taste. Also tried their lassi - absolutely refreshing. Will definitely come back!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-info">
+                        <h4>Sara Malik</h4>
+                        <p>Faisalabad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Celebrated my son's birthday here. The mutton korma was incredible! Staff was very welcoming and the food arrived hot and fresh."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-info">
+                        <h4>Rizwan Ahmed</h4>
+                        <p>Multan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Amazing Pakistani cuisine! The chicken tikka and chapli kabab are must-tries. Best desi restaurant experience I've had!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">Z</div>
+                    <div class="testimonial-info">
+                        <h4>Zainab Hussain</h4>
+                        <p>Peshawar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <div class="cart-empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add some delicious items to get started!</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-amount" id="cartTotal">Rs. 0</span>
+            </div>
+            <div class="cart-footer-buttons">
+                <button class="checkout-btn" onclick="checkoutViaWhatsApp()" id="checkoutBtn" disabled>
+                    <span style="font-size: 1.5rem;">💬</span> Checkout via WhatsApp
+                </button>
+                <button class="clear-cart-btn" onclick="clearCart()" id="clearCartBtn" disabled>
+                    🗑️ Clear Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">DELÍCIA</div>
+                <p>Experience the authentic taste of Pakistan. We serve traditional Pakistani cuisine with love, using the finest ingredients and time-honored recipes.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#testimonials">Customer Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Address:</strong><br>
+                        <span style="color: var(--gray-text);">Block 123, Road 456<br>Sukkur, Sindh<br>Pakistan</span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        <span style="color: var(--gray-text);">+92 300 1234567<br>+92 71 1234567</span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <strong>Email:</strong><br>
+                        <span style="color: var(--gray-text);">info@deliciarestaurant.pk</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <div class="opening-hours">
+                    <div class="hours-row">
+                        <span class="hours-day">Monday - Thursday</span>
+                        <span class="hours-time">11:00 AM - 11:00 PM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Friday</span>
+                        <span class="hours-time">2:00 PM - 12:00 AM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Saturday</span>
+                        <span class="hours-time">11:00 AM - 12:00 AM</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="hours-day">Sunday</span>
+                        <span class="hours-time">11:00 AM - 11:00 PM</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--primary-gold);">
+                    ⭐ Open for Dine-in, Takeaway & Delivery
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Delícia Restaurant. All Rights Reserved.</p>
+            <p>Developed by Hafizullah</p>
+            <p style="margin-top: 1rem; color: var(--primary-gold);">🍽️ Pakistan's Finest Dining Experience 🍽️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
